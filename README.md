@@ -4,6 +4,12 @@ Wallpaper Manager is a local-first wallpaper application built with Flutter. It 
 
 The long-term target is Windows, macOS, Android, and iOS. Windows is the currently implemented and tested desktop platform; the shared application and domain layers are structured for the remaining platforms.
 
+## Run
+Extract the following folder on your device:
+
+                \apps\wallpaper_app\build\windows\x64\runner\Release
+                
+then click **wallpaper_app.exe**.
 ## Features
 
 - Local album sources with recursive image and video discovery
