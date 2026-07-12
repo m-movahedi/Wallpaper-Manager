@@ -138,15 +138,25 @@ See [docs/architecture.md](docs/architecture.md) for component, privacy, and del
 
 ## Suggested RSS Feeds
 NASA Image of the Day
+
         https://www.nasa.gov/feeds/iotd-feed/
+        
 NASA Earth Observatory
+
         https://science.nasa.gov/feed/earth-observatory/image-of-the-day
+        
 Wikimedia Commons Picture of the Day
+
         https://commons.wikimedia.org/w/api.php?action=featuredfeed&feed=potd&feedformat=rss&language=en
+        
         https://commons.wikimedia.org/w/api.php?action=featuredfeed&feed=potd&feedformat=atom&language=en
+        
 NASA Astronomy Picture of the Day—APOD
+
         https://antwrp.gsfc.nasa.gov/apod.rss
+        
         https://apod.com/feed.rss
+        
 
 ## Author
 
