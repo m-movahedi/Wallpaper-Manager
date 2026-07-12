@@ -4,6 +4,12 @@ Wallpaper Manager is a local-first wallpaper application built with Flutter. It 
 
 The long-term target is Windows, macOS, Android, and iOS. Windows is the currently implemented and tested desktop platform; the shared application and domain layers are structured for the remaining platforms.
 
+## Run
+Extract the following folder on your device:
+
+                \apps\wallpaper_app\build\windows\x64\runner\Release
+                
+then click **wallpaper_app.exe**.
 ## Features
 
 - Local album sources with recursive image and video discovery
@@ -138,15 +144,25 @@ See [docs/architecture.md](docs/architecture.md) for component, privacy, and del
 
 ## Suggested RSS Feeds
 NASA Image of the Day
+
         https://www.nasa.gov/feeds/iotd-feed/
+        
 NASA Earth Observatory
+
         https://science.nasa.gov/feed/earth-observatory/image-of-the-day
+        
 Wikimedia Commons Picture of the Day
+
         https://commons.wikimedia.org/w/api.php?action=featuredfeed&feed=potd&feedformat=rss&language=en
+        
         https://commons.wikimedia.org/w/api.php?action=featuredfeed&feed=potd&feedformat=atom&language=en
+        
 NASA Astronomy Picture of the Day—APOD
+
         https://antwrp.gsfc.nasa.gov/apod.rss
+        
         https://apod.com/feed.rss
+        
 
 ## Author
 
