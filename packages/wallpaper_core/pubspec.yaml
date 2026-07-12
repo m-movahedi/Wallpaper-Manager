@@ -1,0 +1,7 @@
+name: wallpaper_core
+description: Platform-neutral domain core for the Wallpaper application.
+version: 0.1.0
+environment:
+  sdk: ^3.12.0
+dev_dependencies:
+  test: ^1.26.0

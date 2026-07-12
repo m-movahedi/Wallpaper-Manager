@@ -1,0 +1,30 @@
+name: wallpaper_app
+description: Cross-platform Wallpaper client.
+publish_to: none
+version: 0.1.0+1
+environment:
+  sdk: ^3.12.0
+dependencies:
+  file_selector: ^1.1.0
+  flutter:
+    sdk: flutter
+  http: ^1.5.0
+  image: ^4.9.1
+  launch_at_startup: ^0.5.1
+  shared_preferences: ^2.5.5
+  tray_manager: ^0.5.3
+  url_launcher: ^6.3.2
+  wallpaper_core:
+    path: ../../packages/wallpaper_core
+  window_manager: ^0.5.2
+  xml: ^7.0.1
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/icons/app_icon.png
+    - assets/icons/tray_icon.ico
+    - assets/icons/tray_icon.png
