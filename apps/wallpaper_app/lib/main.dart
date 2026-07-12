@@ -625,17 +625,12 @@ class _SettingsPage extends StatelessWidget {
         ),
         const SizedBox(height: 24),
         Center(
-          child: TextButton.icon(
+          child: TextButton(
             onPressed: () => launchUrl(
               Uri.parse('https://m-movahedi.com'),
               mode: LaunchMode.externalApplication,
             ),
-            icon: const Icon(
-              Icons.favorite_rounded,
-              color: Colors.redAccent,
-              size: 18,
-            ),
-            label: const Text('Developed with ❤️ by Mohammad Movahedi'),
+            child: const Text('Developed with ❤️ by Mohammad Movahedi'),
           ),
         ),
         if (desktop) ...[
