@@ -28,3 +28,14 @@ flutter:
     - assets/icons/app_icon.png
     - assets/icons/tray_icon.ico
     - assets/icons/tray_icon.png
+msix_config:
+  display_name: "Wallpaper Manager"
+  publisher_display_name: "M. Movahedi"
+  identity_name: "com.movahedi.wallpaper"
+  msix_version: "1.0.0.0"
+  logo_path: "assets/icons/msix_logo.png"
+  capabilities:
+    - internet
+    - readExternalStorage
+    - writeExternalStorage
+  

@@ -99,6 +99,50 @@ apps/wallpaper_app/build/windows/x64/runner/Release/
 
 Distribute the complete `Release` directory, not only the executable, because Flutter requires the adjacent DLL and data files.
 
+## Build the Windows MSI Installer
+
+Install the supported WiX Toolset version once:
+
+```powershell
+dotnet tool install --global wix --version 5.0.2
+```
+
+Then build the Flutter release and MSI from the repository root:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\installer\windows\build-msi.ps1
+```
+
+The version is read from `apps/wallpaper_app/pubspec.yaml`. The resulting installer is written to:
+
+```text
+dist/Wallpaper-Manager-<version>-x64.msi
+```
+
+The MSI installs Wallpaper Manager for all users, creates desktop and Start Menu shortcuts, registers the application in Windows Apps & Features, and supports in-place upgrades and clean uninstallation. Administrator approval is required during installation.
+
+## Build the Windows Setup Executable
+
+Install Inno Setup 6 once:
+
+```powershell
+winget install --id JRSoftware.InnoSetup --exact
+```
+
+Then build the Flutter release and Setup executable from the repository root:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\installer\windows\build-exe.ps1
+```
+
+The resulting installer is written to:
+
+```text
+dist/Wallpaper-Manager-<version>-x64-Setup.exe
+```
+
+The Setup executable installs Wallpaper Manager for all users, bundles the required Visual C++ runtime DLLs, creates Start Menu and optional desktop shortcuts, and supports upgrades and clean uninstallation. Administrator approval is required during installation.
+
 ## Testing
 
 Run the Flutter application checks:

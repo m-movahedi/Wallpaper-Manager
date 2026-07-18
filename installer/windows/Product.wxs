@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Package
+    Name="Wallpaper Manager"
+    Manufacturer="Mohammad Movahedi"
+    Version="$(var.ProductVersion)"
+    UpgradeCode="6D73F1D1-5842-4B7A-AD97-E0AF2F81F71E"
+    Language="1033"
+    InstallerVersion="500"
+    Scope="perMachine">
+
+    <SummaryInformation
+      Description="Wallpaper Manager for Windows"
+      Manufacturer="Mohammad Movahedi" />
+
+    <MajorUpgrade
+      DowngradeErrorMessage="A newer version of Wallpaper Manager is already installed." />
+    <MediaTemplate EmbedCab="yes" CompressionLevel="high" />
+
+    <Icon Id="WallpaperManagerIcon.ico" SourceFile="$(var.IconPath)" />
+    <Property Id="ARPPRODUCTICON" Value="WallpaperManagerIcon.ico" />
+    <Property Id="ARPURLINFOABOUT" Value="https://m-movahedi.com" />
+
+    <Feature Id="MainFeature" Title="Wallpaper Manager" Level="1">
+      <ComponentGroupRef Id="ApplicationFiles" />
+      <ComponentRef Id="ApplicationShortcuts" />
+    </Feature>
+  </Package>
+
+  <Fragment>
+    <StandardDirectory Id="ProgramFiles64Folder">
+      <Directory Id="INSTALLFOLDER" Name="Wallpaper Manager" />
+    </StandardDirectory>
+    <StandardDirectory Id="ProgramMenuFolder">
+      <Directory Id="ApplicationProgramsFolder" Name="Wallpaper Manager" />
+    </StandardDirectory>
+    <StandardDirectory Id="DesktopFolder" />
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="ApplicationFiles" Directory="INSTALLFOLDER">
+      <Files Include="$(var.SourceDir)\**" />
+    </ComponentGroup>
+
+    <Component Id="ApplicationShortcuts" Directory="INSTALLFOLDER" Guid="*" Bitness="always64">
+      <Shortcut
+        Id="StartMenuShortcut"
+        Directory="ApplicationProgramsFolder"
+        Name="Wallpaper Manager"
+        Description="Open Wallpaper Manager"
+        Target="[INSTALLFOLDER]wallpaper_app.exe"
+        WorkingDirectory="INSTALLFOLDER"
+        Icon="WallpaperManagerIcon.ico" />
+      <Shortcut
+        Id="DesktopShortcut"
+        Directory="DesktopFolder"
+        Name="Wallpaper Manager"
+        Description="Open Wallpaper Manager"
+        Target="[INSTALLFOLDER]wallpaper_app.exe"
+        WorkingDirectory="INSTALLFOLDER"
+        Icon="WallpaperManagerIcon.ico" />
+      <RemoveFolder Id="RemoveApplicationProgramsFolder" Directory="ApplicationProgramsFolder" On="uninstall" />
+      <RegistryValue
+        Root="HKLM"
+        Key="Software\Mohammad Movahedi\Wallpaper Manager"
+        Name="Installed"
+        Type="integer"
+        Value="1"
+        KeyPath="yes" />
+    </Component>
+  </Fragment>
+</Wix>
