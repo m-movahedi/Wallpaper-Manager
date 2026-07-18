@@ -7,7 +7,7 @@ The long-term target is Windows, macOS, Android, and iOS. Windows is the current
 ## Run
 Extract the following folder on your device:
 
-                \apps\wallpaper_app\build\windows\x64\runner\Release
+ .\dist
                 
 then click **wallpaper_app.exe**.
 ## Features
