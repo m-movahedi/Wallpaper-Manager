@@ -9,4 +9,3 @@ pubspec.lock
 .vscode/
 *.iml
 *.log
-dist/
